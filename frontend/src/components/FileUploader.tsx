@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { UploadCloud, FileText, Loader2, AlertCircle } from 'lucide-react';
+import { UploadCloud, Loader2, AlertCircle } from 'lucide-react';
 import { documentAPI } from '../services/api';
 
 interface FileUploaderProps {

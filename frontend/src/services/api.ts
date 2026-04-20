@@ -1,7 +1,8 @@
+/// <reference types="vite/client" />
 import axios from 'axios';
 import { ChatResponse, DocumentInfo } from '../types';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://docmind-ai-zvph.onrender.com';
 
 const api = axios.create({
   baseURL: `${API_URL}/api`,
