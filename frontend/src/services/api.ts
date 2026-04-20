@@ -34,11 +34,17 @@ export const documentAPI = {
 
 export const chatAPI = {
   sendMessage: async (message: string, sessionId: string): Promise<ChatResponse> => {
-    const response = await api.post('/chat', {
-      message,
-      session_id: sessionId,
-    });
-    return response.data;
+    try {
+      const response = await api.post('/chat', {
+        message,
+        session_id: sessionId,
+      });
+      return response.data;
+    } catch (error) {
+      // Log the error for debugging
+      console.error('API error:', error);
+      throw error;
+    }
   },
   getHistory: async (sessionId: string) => {
     const response = await api.get(`/chat/history?session_id=${sessionId}`);
